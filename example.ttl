@@ -1,0 +1,27 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix example: <http://example.com#> .
+
+# classes (-> GraphQL types )
+
+example:Organization a rdfs:Class ;
+    rdfs:comment "An organization such as a school, NGO, corporation, club, etc." .
+
+example:Person a rdfs:Class ;
+    rdfs:comment "A person" .
+
+# properties ( -> GraphQL fields )
+
+example:name a rdf:Property, owl:FunctionalProperty ;
+    rdfs:comment "Name" ;
+    schema:domainIncludes example:Person ;
+    schema:domainIncludes example:Organization ;
+    schema:rangeIncludes xsd:string .
+
+example:employee a rdf:Property ;
+    rdfs:comment "An employee of an organization" ;
+    schema:domainIncludes example:Organization ;
+    schema:rangeIncludes example:Person .

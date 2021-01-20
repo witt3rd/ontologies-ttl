@@ -1,0 +1,113 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+<http://web.resource.org/cc/Work>
+  a rdfs:Class ;
+  dc11:title "work" ;
+  dc11:description "a potentially copyrightable work" ;
+  rdfs:seeAlso <http://www.w3.org/2000/10/swap/pim/doc#Work> .
+
+<http://web.resource.org/cc/Agent>
+  a rdfs:Class ;
+  dc11:title "agent" ;
+  dc11:description "something (e.g. a person, corporation or computer) capable of creating things" .
+
+<http://web.resource.org/cc/License>
+  a rdfs:Class ;
+  dc11:title "license" ;
+  dc11:description "a set of requests/permissions to users of a Work, e.g. a copyright license, the public domain, information for distributors" .
+
+<http://web.resource.org/cc/Permission>
+  a rdfs:Class ;
+  dc11:title "permission" ;
+  dc11:description "an action that may or may not be allowed or desired" .
+
+<http://web.resource.org/cc/Requirement>
+  a rdfs:Class ;
+  dc11:title "requirement" ;
+  dc11:description "an action that may or may not be requested of you" .
+
+<http://web.resource.org/cc/Prohibition>
+  a rdfs:Class ;
+  dc11:title "prohibition" ;
+  dc11:description "something you may be asked not to do" .
+
+<http://web.resource.org/cc/PublicDomain>
+  a <http://web.resource.org/cc/License> ;
+  dc11:title "public domain" ;
+  dc11:description "no copyright; everything is permitted without restriction" .
+
+<http://web.resource.org/cc/Reproduction>
+  a <http://web.resource.org/cc/Permission> ;
+  dc11:title "reproduction" ;
+  dc11:description "making multiple copies" .
+
+<http://web.resource.org/cc/Distribution>
+  a <http://web.resource.org/cc/Permission> ;
+  dc11:title "distribution" ;
+  dc11:description "distribution, public display, and publicly performance" .
+
+<http://web.resource.org/cc/DerivativeWorks>
+  a <http://web.resource.org/cc/Permission> ;
+  dc11:title "derivative works" ;
+  dc11:description "creation and distribution of derivative works" .
+
+<http://web.resource.org/cc/Notice>
+  a <http://web.resource.org/cc/Requirement> ;
+  dc11:title "copyright notices" ;
+  dc11:description "copyright and license notices be kept intact" .
+
+<http://web.resource.org/cc/Attribution>
+  a <http://web.resource.org/cc/Requirement> ;
+  dc11:title "attribution" ;
+  dc11:description "credit be given to copyright holder and/or author" .
+
+<http://web.resource.org/cc/ShareAlike>
+  a <http://web.resource.org/cc/Requirement> ;
+  dc11:title "share alike" ;
+  dc11:description "derivative works be licensed under the same terms as the original work" .
+
+<http://web.resource.org/cc/SourceCode>
+  a <http://web.resource.org/cc/Requirement> ;
+  dc11:title "source code" ;
+  dc11:description "source code (the preferred form for making modifications) must be provided for all derivative works" .
+
+<http://web.resource.org/cc/CommercialUse>
+  a <http://web.resource.org/cc/Prohibition> ;
+  dc11:title "commercial use" ;
+  dc11:description "exercising rights for commercial purposes" .
+
+<http://web.resource.org/cc/license>
+  a rdf:Property ;
+  dc11:title "has license" ;
+  rdfs:domain <http://web.resource.org/cc/Work> ;
+  rdfs:range <http://web.resource.org/cc/License> ;
+  rdfs:seeAlso <http://www.w3.org/2000/10/swap/pim/doc#ipr> ;
+  rdfs:subPropertyOf dc:license .
+
+<http://web.resource.org/cc/permits>
+  a rdf:Property ;
+  dc11:title "permits" ;
+  rdfs:domain <http://web.resource.org/cc/License> ;
+  rdfs:range <http://web.resource.org/cc/Permission> .
+
+<http://web.resource.org/cc/requires>
+  a rdf:Property ;
+  dc11:title "requires" ;
+  rdfs:domain <http://web.resource.org/cc/License> ;
+  rdfs:range <http://web.resource.org/cc/Requirement> .
+
+<http://web.resource.org/cc/prohibits>
+  a rdf:Property ;
+  dc11:title "prohibits" ;
+  rdfs:domain <http://web.resource.org/cc/License> ;
+  rdfs:range <http://web.resource.org/cc/Prohibition> .
+
+<http://web.resource.org/cc/derivativeWork>
+  a rdf:Property ;
+  dc11:title "has a derivative work" ;
+  rdfs:domain <http://web.resource.org/cc/Work> ;
+  rdfs:range <http://web.resource.org/cc/Work> ;
+  rdfs:seeAlso dc11:source .
